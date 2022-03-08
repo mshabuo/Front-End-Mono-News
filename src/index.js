@@ -3,7 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,4 +19,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
