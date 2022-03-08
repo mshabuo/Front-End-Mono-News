@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -36,3 +38,45 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  list-style: none;
+}
+
+.Navigation {
+  display: inline-flex;
+  width: 50px;
+}
+
+.Logo {
+  color: khaki;
+}
+
+.nav_list {
+  flex-direction: row;
+  height: 200px;
+}
+.nav_item {
+  display: inline;
+  padding-left: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-bottom: darkgray;
+}
+
+.header_logo {
+  display: inline;
+  float: left;
+  margin: 20px;
+}
+
+.Article_card {
+justify-content: left;
+align-items: right;
+width: 300px;
+margin-top: 5px;
+padding: 5px;
+flex-direction: column;
+
+}
+
