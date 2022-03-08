@@ -14,7 +14,7 @@ const [articles, setArticles] = useState([])
     }, [])
     return (
     <div>
-        <ul className="ArticleList">
+        <ul className="Article_list">
         {articles.map((article)=>{
             return <ArticleCard key ={article.article_id} article = {article} />
         })}

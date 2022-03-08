@@ -2,7 +2,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-}
+  }
 
 .App-logo {
   height: 40vmin;
@@ -46,15 +46,29 @@ ul {
 .Navigation {
   display: inline-flex;
   width: 50px;
+  height: 100px;
 }
 
 .Logo {
-  color: khaki;
+  color: darkslategray;
+  font-family: monospace;
+  font-size: 25px;
+  font-style: inherit;
+  font-weight: lighter;
 }
 
 .nav_list {
+  font-family: monospace;
+  font-weight: lighter;
+  font-size: 18px;
+margin-top: 2px;
   flex-direction: row;
-  height: 200px;
+  padding: 2px;
+  height: 25px;
+  background-color: darkslategray;
+  color: white;
+  
+  
 }
 .nav_item {
   display: inline;
@@ -62,6 +76,7 @@ ul {
   margin-top: 100px;
   margin-bottom: 100px;
   border-bottom: darkgray;
+  
 }
 
 .header_logo {
@@ -71,12 +86,22 @@ ul {
 }
 
 .Article_card {
-justify-content: left;
-align-items: right;
+border: darkslategray;
+border-style: solid;
+justify-content: center;
+align-items: center;
 width: 300px;
 margin-top: 5px;
 padding: 5px;
-flex-direction: column;
-
+border-radius: 40px 0px;
+background-color: rgba(0, 128, 0, 0.05);
+}
+.Article_list {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border: black;
+  align-items: center;
+  justify-content: flex-start;
 }
 
