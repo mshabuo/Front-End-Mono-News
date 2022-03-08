@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-}
+  display: flex;
+  flex-direction: column;
+  }
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +38,70 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  list-style: none;
+}
+
+.Navigation {
+  display: inline-flex;
+  width: 50px;
+  height: 100px;
+}
+
+.Logo {
+  color: darkslategray;
+  font-family: monospace;
+  font-size: 25px;
+  font-style: inherit;
+  font-weight: lighter;
+}
+
+.nav_list {
+  font-family: monospace;
+  font-weight: lighter;
+  font-size: 18px;
+margin-top: 2px;
+  flex-direction: row;
+  padding: 2px;
+  height: 25px;
+  background-color: darkslategray;
+  color: white;
+  
+  
+}
+.nav_item {
+  display: inline;
+  padding-left: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-bottom: darkgray;
+  
+}
+
+.header_logo {
+  display: inline;
+  float: left;
+  margin: 20px;
+}
+
+.Article_card {
+border: darkslategray;
+border-style: solid;
+justify-content: center;
+align-items: center;
+width: 300px;
+margin-top: 5px;
+padding: 5px;
+border-radius: 40px 0px;
+background-color: rgba(0, 128, 0, 0.05);
+}
+.Article_list {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border: black;
+  align-items: center;
+  justify-content: flex-start;
+}
+
