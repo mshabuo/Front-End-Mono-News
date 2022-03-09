@@ -21,7 +21,7 @@ useEffect(() => {
          console.log("map", topic)
          return (
              <li key={topic.slug} className="nav_item">
-                <Link to={`/articles/${topic.slug}`} className="nav_link">{topic.slug}</Link> 
+                <Link to={`/articles/${topic.slug}`}>{topic.slug}</Link> 
              </li>
          )
      })}
