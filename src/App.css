@@ -109,4 +109,12 @@ background-color: rgba(0, 128, 0, 0.05);
   justify-content: flex-start;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color:grey
+}
+
 

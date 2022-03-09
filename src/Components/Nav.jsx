@@ -17,12 +17,17 @@ useEffect(() => {
   return (
       <>
  <ul className="nav_list">
+     <Link to={'/'}>
+                 home
+                 </Link>
      {topics.map((topic)=>{
          console.log("map", topic)
          return (
+             <>
              <li key={topic.slug} className="nav_item">
-                <Link to={`/articles/${topic.slug}`}>{topic.slug}</Link> 
+                <Link to={`/articles/${topic.slug}`} >{topic.slug}</Link> 
              </li>
+             </>
          )
      })}
  </ul>
