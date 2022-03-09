@@ -83,6 +83,9 @@ margin-top: 2px;
   display: inline;
   float: left;
   margin: 20px;
+  color: black;
+  font-family: monospace;
+  font-size: 30px;
 }
 
 .Article_card {

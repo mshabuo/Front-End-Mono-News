@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './Components/Nav'
 import Header from './Components/Header'
 import ArticlesList from './Components/ArticlesList'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   
@@ -14,15 +15,16 @@ function App() {
 // const userIsLoggedIn = loggedInUser !== null;
 
 return (
-
+  <BrowserRouter>
 <div className="App">
    <Header />
    <Nav />
-   <ArticlesList />
+   <Routes>
+     <Route path="/" element={<ArticlesList />} />
+      <Route path="/articles/:topic" element={<ArticlesList />} />
+   </Routes>
     </div>
-  
-    
-   
+    </BrowserRouter>
   );
 }
 
