@@ -6,7 +6,7 @@ export default function ArticleCard({article}) {
     return (
         <li key={article.article_id} className="Article_card">
             <Link to={`/article/${article.article_id}`}>
-        <h3>{article.title}</h3>
+        <h3 className = "ArticleCard_articleTitle">{article.title}</h3>
         </Link>
         <dl>
            <dt>By: {article.author}</dt>
