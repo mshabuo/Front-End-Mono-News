@@ -10,7 +10,6 @@ const {topic} = useParams();
 const [articles, setArticles] = useState([])
 
     useEffect(() => {
-
         if(topic) {
             api.getArticlesByTopic(topic).then((res)=>{
                 setArticles(res)
@@ -23,6 +22,9 @@ const [articles, setArticles] = useState([])
     }
     }, [topic])
     return (
+        <>
+        <div>
+        </div>
     <div>
         <ul className="Article_list">
         {articles.map((article)=>{
@@ -30,4 +32,5 @@ const [articles, setArticles] = useState([])
         })}
         </ul>
     </div>
+    </>
         )}

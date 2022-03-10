@@ -3,7 +3,11 @@ import { useEffect, useState} from 'react'
 import * as api from "../Utils/api"
 import {Link} from 'react-router-dom'
 
+
 export default function Nav() {
+
+// const {loggedInUser} = useContext(UserContext)
+// console.log(loggedInUser)
 
     const [topics, setTopics] = useState([]);
 
@@ -15,7 +19,8 @@ useEffect(() => {
     }, [])
 
   return (
-      <>
+          <>
+          <div>
  <ul className="nav_list">
      <Link to={'/'}>
                  home
@@ -31,6 +36,7 @@ useEffect(() => {
          )
      })}
  </ul>
+ </div>
   </>
-
-  )};
+)
+    };
