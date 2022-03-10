@@ -11,11 +11,9 @@ export default function SingleArticle() {
 
     useEffect(()=>{
     api.getArticleById(article_id).then((res)=>{
-        console.log(res)
 setArticle(res)
 })
     },[article_id])
-    console.log(article.body)
 
     return (
         
