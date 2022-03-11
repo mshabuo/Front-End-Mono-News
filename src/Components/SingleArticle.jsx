@@ -19,6 +19,7 @@ export default function SingleArticle() {
 
 
     useEffect(()=>{
+
     api.getArticleById(article_id).then((article)=>{
     setArticle(article)
     setIsLoading(false)
