@@ -139,3 +139,14 @@ a:hover {
   color: black;
   
 }
+
+.Single_article_comments {
+  border: lightgrey;
+  border-style: solid;
+  border-radius: 10px 10px 10px;
+  justify-content: auto;
+  align-items: center;
+  width: 350px;
+  margin: 30px;
+  list-style: none;
+}
