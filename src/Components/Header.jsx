@@ -6,7 +6,7 @@ import { useContext } from 'react'
 export default function Header() {
 
     const {loggedInUser} = useContext(UserContext)
-console.log(loggedInUser)
+
 
     return (
         <div>

@@ -26,7 +26,7 @@ useEffect(() => {
                  home
                  </Link>
      {topics.map((topic)=>{
-         console.log("map", topic)
+         
          return (
              <>
              <li key={topic.slug} className="nav_item">
