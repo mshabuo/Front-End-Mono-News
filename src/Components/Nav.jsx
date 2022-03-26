@@ -10,6 +10,7 @@ export default function Nav() {
 // console.log(loggedInUser)
 
     const [topics, setTopics] = useState([]);
+    
 
 useEffect(() => {
          api.getArticlesTopics().then(({data})=>{  
@@ -22,15 +23,15 @@ useEffect(() => {
           <>
           <div>
  <ul className="nav_list">
-     <Link to={'/'}>
-                 home
+     <Link to={'/'} className="nav_item">
+                 HOME
                  </Link>
      {topics.map((topic)=>{
          
          return (
              <>
              <li key={topic.slug} className="nav_item">
-                <Link to={`/articles/${topic.slug}`} >{topic.slug}</Link> 
+                <Link to={`/articles/${topic.slug}`}className="nav_item" >{topic.slug.toUpperCase()}</Link> 
              </li>
              </>
          )

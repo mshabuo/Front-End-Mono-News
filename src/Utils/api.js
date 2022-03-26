@@ -3,27 +3,31 @@ import axios from "axios";
 const api = axios.create ({
     baseURL: "https://gogest.herokuapp.com/api"
 });
-
-export const getArticles = () => {
-    return api.get("/articles")
+//GET
+export const getArticles = (topic, sort_by, order) => {
+    console.log("api", topic, sort_by, order)
+    return api.get(`/articles`, { params: {
+        topic:topic,
+        sort_by:sort_by,
+        order:order
+    }})
     .then((res)=>{
 return res.data.articles
     })
 }
 
-export const getArticlesTopics = () => {
-    return api.get("/topics")
-    .then((res)=>{
-return res.data
-    })
-}
 export const getArticlesByTopic = (topic) => {
     return api.get(`/articles?topic=${topic}`)
     .then((res)=>{
 return res.data.articles
     })
 }
-
+export const getArticlesTopics = () => {
+    return api.get("/topics")
+    .then((res)=>{
+return res.data
+    })
+}
 export const getArticleById = (article_id) => {
     return api.get(`/articles/${article_id}`).then((res)=>{
         return res.data.article[0]
@@ -36,6 +40,8 @@ export const getArticleCommentsById = (article_id) => {
         return res
     })
 }
+
+//PATCH
  export const patchVote = (article_id, value) => {
      return api.patch(`/articles/${article_id}`, {
          votes: value,
@@ -57,6 +63,26 @@ export const getArticleCommentsById = (article_id) => {
     })
     .catch((err)=>{
         console.log(err)
+    })
+}
+
+//POST
+export const postNewComment = (article_id, newComment, loggedInUser) => {
+return api.post(`/articles/${article_id}/comments`, {username: loggedInUser.username, body: newComment})
+
+.then(({data: {comment}})=>{
+    return comment
+})
+.catch((err)=>{
+    console.log(err)
+})
+}
+
+//DELETE
+
+export const deleteComment = (comment_id) => {
+    return api.delete(`/comments/${comment_id}`).then((res)=>{
+        return res
     })
 }
  

@@ -12,11 +12,13 @@ export default function Header() {
         <div>
  <Link to='/'>
     <h3 className="header_logo"> 
-            NC<span className="Logo">News</span>
+            Mono <span className="logo_Feature">> </span>
             </h3>
         </Link>
         <div className="logedInUser">
-     <h4 className="welcome">Welcome back</h4><span className="username">{loggedInUser.username}</span>
+            <Link to='/login'>
+     <button className="logIn_Button">LOG IN</button>
+     </Link>
  </div>
         </div>
     )

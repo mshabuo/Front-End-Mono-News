@@ -7,20 +7,21 @@ import ArticlesList from './Components/ArticlesList'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {UserContext} from "./Contexts/UserContext"
 import SingleArticle from "./Components/SingleArticle"
+import LogIn from './Components/LogIn';
+
 
 function App() {
   
 const [loggedInUser, setLoggedInUser] = useState({
-    username: 'Moe',
-    avatar_url:"https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fprofile&psig=AOvVaw2IhKolXgBTwBe-5wPPjznI&ust=1646916406943000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj4se6HufYCFQAAAAAdAAAAABAD"
+    username: 'tickle122'
 });
 
-const userIsLoggedIn = loggedInUser !== null;
+const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 return (
   <BrowserRouter>
   <UserContext.Provider
-  value={{loggedInUser, setLoggedInUser, userIsLoggedIn}}
+  value={{loggedInUser, setLoggedInUser, setIsLoggedIn}}
   >
 <div className="App">
    <Header />
@@ -29,6 +30,7 @@ return (
      <Route path="/" element={<ArticlesList />} />
       <Route path="/articles/:topic" element={<ArticlesList />} />
       <Route path="/article/:article_id" element ={<SingleArticle />} />
+      <Route path="/login" element ={<LogIn />} />
    </Routes>
     </div>
     </UserContext.Provider>
