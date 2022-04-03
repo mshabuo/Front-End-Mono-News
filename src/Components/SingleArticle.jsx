@@ -34,7 +34,7 @@ export default function SingleArticle() {
       setArticleComments(comment.data)
       setIsLoading(false)
     })
-  }, [])
+  }, [article_id])
 
   const updateVote = value => {
     setVote(currentVote => currentVote + value)
@@ -59,7 +59,6 @@ export default function SingleArticle() {
     setNewComment("")
   }
 
-  if (isLoading) return <h4> Articles are loading...</h4>
   return (
     <>
       <div className="SingleArticle_section">
