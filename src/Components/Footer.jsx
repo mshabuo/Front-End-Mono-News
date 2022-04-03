@@ -7,9 +7,18 @@ export default function Footer() {
         <h5>Follow us </h5>
       </div>
       <div className="Footer_list">
-        <h5 className="Footer_icons">LinkedIn</h5>
-        <h5 className="Footer_icons">Instagram</h5>
-        <h5 className="Footer_icons">Github</h5>
+        <a className="Footer_icons" href="www.linkedin.com/in/mshabuo">
+          LinkedIn
+        </a>
+        <a
+          className="Footer_icons"
+          href="https://www.instagram.com/mshabuo/?hl=en"
+        >
+          Instagram
+        </a>
+        <a className="Footer_icons" href="https://github.com/mshabuo">
+          Github
+        </a>
       </div>
     </>
   )
