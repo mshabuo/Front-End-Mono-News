@@ -77,7 +77,7 @@ export default function SingleArticle() {
           </p>
           <p className="SingleArticle_author">
             <img src="https://img.icons8.com/ios/16/000000/user--v3.png" />{" "}
-            {article.author.charAt(0).toUpperCase() + article.author.slice(1)}
+            {article.author}
           </p>
           <p>
             {" "}

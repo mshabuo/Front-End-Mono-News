@@ -234,8 +234,8 @@ a:hover {
   height: 10px;
   border: 6px solid transparent;
   border-radius: 20px;
-  padding-right: 2px;
-  padding-top: 2px;
+  padding-right: 1px;
+  padding-top: 1px;
   margin-left: 1%;
 }
 
@@ -243,8 +243,9 @@ a:hover {
   font-size: 12px;
   display: flex;
   float: left;
-  padding-right: 4px;
-  padding-left: 5px;
+  padding-right: 2px;
+  padding-left: 2px;
+  margin-left: 2%;
   font-weight: bold;
 }
 .Single_article_comments {

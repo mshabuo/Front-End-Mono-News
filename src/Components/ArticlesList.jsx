@@ -26,8 +26,8 @@ export default function ArticlesList() {
     <>
       <div className="Filter_div">
         <form>
-          <label htmlFor="sort_by" className="Filter">
-            Sort<span className="logo_Feature">/</span>Order
+          <label for="sort_by" className="Filter">
+            Sort By:
           </label>
           <select
             name="sortBy"
@@ -40,6 +40,9 @@ export default function ArticlesList() {
             <option value="votes">Votes</option>
             <option value="created_at">Date</option>
           </select>
+          <label for="order" className="Filter">
+            Order:
+          </label>
           <select
             onChange={event => {
               setOrder(event.target.value)
