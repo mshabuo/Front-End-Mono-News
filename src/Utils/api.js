@@ -74,7 +74,7 @@ export const patchArticleCommentVote = (article_id, value) => {
 export const postNewComment = (article_id, newComment, loggedInUser) => {
   return api
     .post(`/articles/${article_id}/comments`, {
-      username: loggedInUser.username,
+      username: loggedInUser.toLowerCase(),
       body: newComment,
     })
 

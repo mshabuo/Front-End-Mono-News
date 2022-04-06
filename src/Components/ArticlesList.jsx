@@ -26,7 +26,7 @@ export default function ArticlesList() {
     <>
       <div className="Filter_div">
         <form>
-          <label for="sort_by" className="Filter">
+          <label htmlFor="sort_by" className="Header_SortBy">
             Sort By:
           </label>
           <select
@@ -40,7 +40,7 @@ export default function ArticlesList() {
             <option value="votes">Votes</option>
             <option value="created_at">Date</option>
           </select>
-          <label for="order" className="Filter">
+          <label htmlFor="order" className="Header_Order">
             Order:
           </label>
           <select

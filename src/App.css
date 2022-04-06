@@ -40,7 +40,7 @@
     flex-direction: row;
     gap: 10%;
     align-self: center;
-    margin-right: 35%;
+    margin-right: 20%;
     padding-right: 10%;
     color: grey;
     padding-top: 2%;
@@ -239,14 +239,27 @@ a:hover {
   margin-left: 1%;
 }
 
-.Filter {
+.Header_SortBy {
   font-size: 12px;
   display: flex;
   float: left;
-  padding-right: 2px;
-  padding-left: 2px;
-  margin-left: 2%;
+  margin-left: 3%;
   font-weight: bold;
+}
+
+.Header_SortBy:hover {
+  color: olivedrab;
+}
+.Header_Order {
+  font-size: 12px;
+  display: flex;
+  float: left;
+  margin-left: 3%;
+  font-weight: bold;
+}
+
+.Header_Order:hover {
+  color: olivedrab;
 }
 .Single_article_comments {
   position: relative;
@@ -337,6 +350,7 @@ img {
   border-radius: 5px;
   border-color: olivedrab;
   width: 15%;
+  margin-right: -20%;
 }
 
 .logIn_Button:hover {
@@ -344,19 +358,34 @@ img {
   color: white;
 }
 
+.Header_LogInButton {
+  border-style: none;
+  margin-right: 0%;
+  border-width: 40%;
+  font-size: 16px;
+  font-family: helvetica;
+  font-weight: bold;
+  padding-bottom: 1px;
+}
+.Header_LogInButton:hover {
+  color: olivedrab;
+}
 .Footer_list {
   display: flex;
   flex-direction: row;
-  padding: 5%;
-  margin-left: 32%;
+  align-self: center;
+  margin-left: -3%;
+  margin-bottom: 10%;
 }
 
 .Footer_icons {
   color: grey;
   padding-top: 2%;
   align-self: center;
-  margin-bottom: 1%;
+  margin-bottom: 4%;
   margin-right: 2%;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .Footer_followUs {
   border-top: grey;
@@ -366,10 +395,18 @@ img {
   gap: 10%;
   color: grey;
   align-self: center;
-  padding-bottom: 2%;
+  padding-bottom: -20%;
   position: static;
+  font-size: 18px;
 }
 
 .Footer_icons:hover {
   color: olivedrab;
+}
+
+.ErrorCard {
+  font-size: 20px;
+  font-family: monospace;
+  color: olivedrab;
+  font-weight: bold;
 }

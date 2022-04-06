@@ -20,10 +20,8 @@ export default function SingleArticle() {
 
   const { loggedInUser } = useContext(UserContext)
 
-  // params
   const { article_id } = useParams()
 
-  //UseEffect
   useEffect(() => {
     api.getArticleById(article_id).then(article => {
       setArticle(article)

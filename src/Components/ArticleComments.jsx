@@ -13,14 +13,14 @@ export default function ArticleComments({
   setPostMsg,
 }) {
   const customCreatedAt = moment(date).utc().fromNow()
-  //UserContext
+  
   const { loggedInUser } = useContext(UserContext)
 
-  //UseState
+  
   const [msg, setMsg] = useState(null)
   const [deleteButton, setDeleteButton] = useState(null)
 
-  //HandleDelete
+  
   const handleDelete = event => {
     event.preventDefault()
     api.deleteComment(comment_id).then(() => {
@@ -36,9 +36,9 @@ export default function ArticleComments({
     setMsg("")
   }
 
-  //UseEffect
+  
   useEffect(() => {
-    if (author === loggedInUser.username) {
+    if (author === loggedInUser) {
       setDeleteButton(
         <p onClick={handleDelete} className="ArticleComments_DeleteButton">
           {" "}
@@ -47,7 +47,7 @@ export default function ArticleComments({
       )
     }
   }, [])
-  //Render
+  
   return (
     <>
       <div className="Comments_singleComment">
