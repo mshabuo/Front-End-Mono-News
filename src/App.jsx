@@ -11,10 +11,13 @@ import ErrorPage from "./Components/ErrorPage"
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("SIGN IN")
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <BrowserRouter>
-      <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+      <UserContext.Provider
+        value={{ loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn }}
+      >
         <div className="App">
           <Header />
           <Nav />

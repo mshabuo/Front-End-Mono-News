@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import * as api from "../Utils/api"
 import ArticleComments from "./ArticleComments"
 import { UserContext } from "../Contexts/UserContext"
+import ErrorPage from "./ErrorPage"
 
 export default function SingleArticle() {
   const [article, setArticle] = useState([])
@@ -17,46 +18,73 @@ export default function SingleArticle() {
   const [submitButtonText, setSubmitButtonText] = useState("Submit")
   const [postMsg, setPostMsg] = useState(null)
   const [showComments, setShowComments] = useState(false)
+  const [errorAlert, setErrorAlert] = useState(null)
 
-  const { loggedInUser } = useContext(UserContext)
+  const { loggedInUser, isLoggedIn } = useContext(UserContext)
 
   const { article_id } = useParams()
 
   useEffect(() => {
     api.getArticleById(article_id).then(article => {
       setArticle(article)
+      setVote(article.votes)
       setIsLoading(false)
     })
 
-    api.getArticleCommentsById(article_id).then(comment => {
-      setArticleComments(comment.data)
-      setIsLoading(false)
-    })
+    api
+      .getArticleCommentsById(article_id)
+      .then(comment => {
+        setArticleComments(comment.data)
+        setIsLoading(false)
+      })
+      .catch(err => {
+        setErrorAlert(err.message)
+        setIsLoading(false)
+      })
   }, [article_id])
 
   const updateVote = value => {
+    if (!isLoggedIn) {
+      setActiveVote(false)
+      alert("Please log in to vote!")
+      return null
+    }
     setVote(currentVote => currentVote + value)
-    api.patchVote(article_id, value).catch(() => {
+    api.patchVote(article_id, value).catch(err => {
       setVote(0)
-      alert("Opps,votes can't be updated!")
+      setErrorAlert(err.message)
+      setIsLoading(false)
     })
   }
 
   const handleSubmit = event => {
     event.preventDefault()
+    if (newComment.length < 1) {
+      setActiveComment(false)
+      alert("Posting empty comment is not permitted!")
+      return null
+    }
     setSubmitButtonText("Uploading...")
-    api.postNewComment(article_id, newComment, loggedInUser).then(comment => {
-      setArticleComments(currentComments => {
-        return [...currentComments, comment]
+    api
+      .postNewComment(article_id, newComment, loggedInUser)
+      .then(comment => {
+        setArticleComments(currentComments => {
+          return [...currentComments, comment]
+        })
+        setPostMsg("")
+        setActiveComment(true)
+        setIsLoading(false)
       })
-      setPostMsg("")
-      setActiveComment(true)
-      setIsLoading(false)
-    })
+      .catch(err => {
+        setVote(0)
+        setErrorAlert(err.message)
+        setIsLoading(false)
+      })
     setSubmitButtonText("Submit")
     setNewComment("")
   }
 
+  if (errorAlert) return <ErrorPage error={errorAlert} />
   return (
     <>
       <div className="SingleArticle_section">
@@ -72,10 +100,10 @@ export default function SingleArticle() {
             onClick={() => {
               setShowComments(!showComments)
             }}
-            style={{ color: "olivedrab;" }}
+            style={{ color: "olivedrab" }}
             className="SingleArticle_ShowComments"
           >
-            Show Article Comments &nbsp; &nbsp;
+            View Article Comments &nbsp; &nbsp;
             <span className="Article-Arrow">&#10230;</span>
           </p>
           <p className="SingleArticle_author">

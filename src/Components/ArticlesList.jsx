@@ -4,6 +4,7 @@ import Footer from "./Footer"
 import { useEffect, useState } from "react"
 import * as api from "../Utils/api"
 import { useParams } from "react-router-dom"
+import ErrorPage from "./ErrorPage"
 
 export default function ArticlesList() {
   const { topic } = useParams()
@@ -11,14 +12,23 @@ export default function ArticlesList() {
   const [isLoading, setIsLoading] = useState(true)
   const [sortBy, setSortBy] = useState(null)
   const [order, setOrder] = useState(null)
+  const [error, setError] = useState(false)
+  const [errorAlert, setErrorAlert] = useState(null)
 
   useEffect(() => {
-    api.getArticles(topic, sortBy, order).then(res => {
-      setArticles(res)
-      setIsLoading(false)
-    })
+    api
+      .getArticles(topic, sortBy, order)
+      .then(res => {
+        setArticles(res)
+        setIsLoading(false)
+      })
+      .catch(err => {
+        setErrorAlert(err.message)
+        setIsLoading(false)
+      })
   }, [topic, order, sortBy])
 
+  if (errorAlert) return <ErrorPage error={errorAlert} />
   if (isLoading) {
     return <h4>Articles are loading...</h4>
   }

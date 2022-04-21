@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import { UserContext } from "../Contexts/UserContext"
 
 export default function LogIn() {
-  const { setLoggedInUser } = useContext(UserContext)
+  const { setLoggedInUser, setIsLoggedIn } = useContext(UserContext)
   const [signIn, setSignIn] = useState("")
 
   const handleClick = event => {
@@ -21,6 +21,7 @@ export default function LogIn() {
               value={signIn.username}
               onChange={event => {
                 setSignIn(event.target.value)
+                setIsLoggedIn(true)
               }}
             ></input>
           </li>

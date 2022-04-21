@@ -5,7 +5,6 @@ const api = axios.create({
 })
 //GET
 export const getArticles = (topic, sort_by, order) => {
-  console.log("api", topic, sort_by, order)
   return api
     .get(`/articles`, {
       params: {
@@ -16,6 +15,9 @@ export const getArticles = (topic, sort_by, order) => {
     })
     .then(res => {
       return res.data.articles
+    })
+    .catch(err => {
+      throw new Error(err.response.data.msg)
     })
 }
 
@@ -30,16 +32,25 @@ export const getArticlesTopics = () => {
   })
 }
 export const getArticleById = article_id => {
-  return api.get(`/articles/${article_id}`).then(res => {
-    return res.data.article[0]
-  })
+  return api
+    .get(`/articles/${article_id}`)
+    .then(res => {
+      return res.data.article[0]
+    })
+    .catch(err => {
+      throw new Error(err.response.data.msg)
+    })
 }
 
 export const getArticleCommentsById = article_id => {
-  console.log("api params", article_id)
-  return api.get(`/articles/${article_id}/comments`).then(res => {
-    return res
-  })
+  return api
+    .get(`/articles/${article_id}/comments`)
+    .then(res => {
+      return res
+    })
+    .catch(err => {
+      throw new Error(err.response.data.msg)
+    })
 }
 
 //PATCH
@@ -52,12 +63,11 @@ export const patchVote = (article_id, value) => {
       return res
     })
     .catch(err => {
-      console.log(err)
+      throw new Error(err.response.data.msg)
     })
 }
 
 export const patchArticleCommentVote = (article_id, value) => {
-  console.log("api params", article_id)
   return api
     .patch(`/articles/${article_id}/comments`, {
       votes: value,
@@ -66,7 +76,7 @@ export const patchArticleCommentVote = (article_id, value) => {
       return res
     })
     .catch(err => {
-      console.log(err)
+      throw new Error(err.response.data.msg)
     })
 }
 
@@ -82,14 +92,19 @@ export const postNewComment = (article_id, newComment, loggedInUser) => {
       return comment
     })
     .catch(err => {
-      console.log(err)
+      throw new Error(err.response.data.msg)
     })
 }
 
 //DELETE
 
 export const deleteComment = comment_id => {
-  return api.delete(`/comments/${comment_id}`).then(res => {
-    return res
-  })
+  return api
+    .delete(`/comments/${comment_id}`)
+    .then(res => {
+      return res
+    })
+    .catch(err => {
+      throw new Error(err.response.data.msg)
+    })
 }

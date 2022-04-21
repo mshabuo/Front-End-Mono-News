@@ -1,9 +1,10 @@
 import React from "react"
 
-export default function ErrorPage() {
+const ErrorPage = ({ error = "Opps, something went wrong!" }) => {
   return (
     <div className="ErrorCard">
-      <p> Opps, something went wrong!</p>
+      <p> {error}!</p>
     </div>
   )
 }
+export default ErrorPage
