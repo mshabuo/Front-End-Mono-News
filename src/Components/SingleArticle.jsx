@@ -65,21 +65,25 @@ export default function SingleArticle() {
           <p>{article.body}</p>
           <p>
             {" "}
-            <img
-              src="https://img.icons8.com/material-outlined/16/000000/comments--v2.png"
-              onClick={() => {
-                setShowComments(!showComments)
-              }}
-            />
+            <img src="https://img.icons8.com/material-outlined/16/000000/comments--v2.png" />
             {article.comment_count}
           </p>
+          <p
+            onClick={() => {
+              setShowComments(!showComments)
+            }}
+            style={{ color: "olivedrab;" }}
+            className="SingleArticle_ShowComments"
+          >
+            Show Article Comments &nbsp; &nbsp;
+            <span className="Article-Arrow">&#10230;</span>
+          </p>
           <p className="SingleArticle_author">
-            <img src="https://img.icons8.com/ios/16/000000/user--v3.png" />{" "}
+            <img src="https://img.icons8.com/ios/16/000000/user--v3.png" />
             {article.author}
           </p>
           <p>
-            {" "}
-            <img src="https://img.icons8.com/ios/16/000000/thumb-up--v1.png" />{" "}
+            <img src="https://img.icons8.com/ios/16/000000/thumb-up--v1.png" />
             {vote}
           </p>
           <button
@@ -132,11 +136,7 @@ export default function SingleArticle() {
                 }}
               ></textarea>
               <>{postMsg}</>
-              <button
-                type="submit"
-                disabled={activeComment}
-                className="Submit_Button"
-              >
+              <button type="submit" className="Submit_Button">
                 {submitButtonText}
               </button>
             </form>

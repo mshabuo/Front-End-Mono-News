@@ -27,7 +27,9 @@ export default function LogIn() {
           <br></br>
           <li>Please log in as default user: tickle122</li>
         </ul>
-        <button className="LogIn_Button">Log In</button>
+        <button className="LogIn_Button">
+          SIGN IN &nbsp; <span className="Article-Arrow">&#10230;</span>
+        </button>
         <br></br>
       </form>
     </div>

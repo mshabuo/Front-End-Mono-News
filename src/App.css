@@ -288,6 +288,10 @@ a:hover {
   color: olivedrab;
   font-weight: bolder;
 }
+.SingleArticle_ShowComments {
+  color: olivedrab;
+  font-weight: bold;
+}
 
 .ArticleCard_author {
   padding: 1%;
@@ -346,11 +350,13 @@ img {
 }
 
 .LogIn_Button {
-  background-color: white;
-  border-radius: 5px;
-  border-color: olivedrab;
+  color: olivedrab;
   width: 15%;
+  background-color: white;
   margin-right: -20%;
+  border-style: none;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .logIn_Button:hover {
