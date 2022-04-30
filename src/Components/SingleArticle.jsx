@@ -96,16 +96,15 @@ export default function SingleArticle() {
             <img src="https://img.icons8.com/material-outlined/16/000000/comments--v2.png" />
             {article.comment_count}
           </p>
-          <p
+          <button
             onClick={() => {
               setShowComments(!showComments)
             }}
-            style={{ color: "olivedrab" }}
-            className="SingleArticle_ShowComments"
+            className="SingleArticle_ViewButton"
           >
-            View Article Comments &nbsp; &nbsp;
+            View Comments &nbsp; &nbsp;
             <span className="Article-Arrow">&#10230;</span>
-          </p>
+          </button>
           <p className="SingleArticle_author">
             <img src="https://img.icons8.com/ios/16/000000/user--v3.png" />
             {article.author}

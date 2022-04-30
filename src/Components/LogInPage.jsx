@@ -7,6 +7,9 @@ export default function LogIn() {
 
   const handleClick = event => {
     event.preventDefault()
+    if (signIn.length < 1) {
+      alert("Please enter valid username to sign in!")
+    }
     setLoggedInUser(signIn)
   }
 

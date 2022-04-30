@@ -202,16 +202,6 @@ a:hover {
   margin-bottom: 5px;
 }
 
-.logIn_Button {
-  background-color: lightgray;
-  border-radius: 20px;
-  height: 30px;
-  margin-left: 2px;
-  margin-right: 3px;
-  width: 100px;
-  font-weight: bolder;
-}
-
 .Delete_Button {
   float: left;
   margin-left: 50px;
@@ -287,10 +277,6 @@ a:hover {
 .SingleArticle_ArticleTitle {
   color: olivedrab;
   font-weight: bolder;
-}
-.SingleArticle_ShowComments {
-  color: olivedrab;
-  font-weight: bold;
 }
 
 .ArticleCard_author {
@@ -372,6 +358,19 @@ img {
   font-family: helvetica;
   font-weight: bold;
   padding-bottom: 1px;
+}
+.SingleArticle_ViewButton {
+  border-style: none;
+  margin-right: 0%;
+  border-width: 40%;
+  font-size: 16px;
+  font-family: helvetica;
+  font-weight: bold;
+  padding-bottom: 1px;
+  background-color: inherit;
+}
+.SingleArticle_ViewButton:hover {
+  color: olivedrab;
 }
 .Header_LogInButton:hover {
   color: olivedrab;
